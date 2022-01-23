@@ -38,7 +38,7 @@ class CustomControlsState extends MusicBeatSubstate
 	var leftArrow:FlxSprite;
 	var rightArrow:FlxSprite;
 							//'hitbox',
-	var controlitems:Array<String> = ['keyboard','custom', 'hitbox'];
+	var controlitems:Array<String> = ['hitbox','keyboard'];
 
 	var curSelected:Int = 0;
 
@@ -204,29 +204,12 @@ class CustomControlsState extends MusicBeatSubstate
 	
 			switch curSelected{
 				case 0:
-					this.remove(_pad);
-					_pad = null;
-					_pad = new FlxVirtualPad(RIGHT_FULL, NONE);
-					_pad.alpha = 0.75;
-					this.add(_pad);
-				case 1:
-					this.remove(_pad);
-					_pad = null;
-					_pad = new FlxVirtualPad(FULL, NONE);
-					_pad.alpha = 0.75;
-					this.add(_pad);
-				case 2:
-					trace(2);
-					_pad.alpha = 0;
-				case 3:
-					trace(3);
-					this.add(_pad);
-					_pad.alpha = 0.75;
-					loadcustom();
-				case 4:
 					remove(_pad);
 					_pad.alpha = 0;
 					_hb.visible = true;
+				case 1:
+					trace(2);
+					_pad.alpha = 0;
 
 			}
 	
