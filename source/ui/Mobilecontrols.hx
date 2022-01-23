@@ -29,12 +29,6 @@ class Mobilecontrols extends FlxSpriteGroup
 
 		switch (mode)
 		{
-			case VIRTUALPAD_RIGHT:
-				initVirtualPad(0);
-			case VIRTUALPAD_LEFT:
-				initVirtualPad(1);
-			case VIRTUALPAD_CUSTOM:
-				initVirtualPad(2);
 			case HITBOX:
 				_hitbox = new Hitbox();
 				add(_hitbox);
@@ -63,22 +57,16 @@ class Mobilecontrols extends FlxSpriteGroup
 	public static function getModeFromNumber(modeNum:Int):ControlsGroup {
 		return switch (modeNum)
 		{
-			case 0: VIRTUALPAD_RIGHT;
-			case 1: VIRTUALPAD_LEFT;
-			case 2: KEYBOARD;
-			case 3: VIRTUALPAD_CUSTOM;
-			case 4:	HITBOX;
+			case 0: HITBOX;
+			case 1: KEYBOARD;
 
-			default: VIRTUALPAD_RIGHT;
+			default: HITBOX;
 
 		}
 	}
 }
 
 enum ControlsGroup {
-	VIRTUALPAD_RIGHT;
-	VIRTUALPAD_LEFT;
-	KEYBOARD;
-	VIRTUALPAD_CUSTOM;
 	HITBOX;
+	KEYBOARD;
 }
